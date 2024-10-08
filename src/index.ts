@@ -1,10 +1,14 @@
 import express, { Application, Request, Response } from "express";
 
+// import routes
+import userRoutes from "./routes/userRoutes";
+
 const app: Application = express();
 const PORT = process.env.PORT || 3001;
 
 // middleware
 app.use(express.json());
+app.use("/api/users", userRoutes);
 
 // home route
 app.get("/", (req: Request, res: Response) => {
