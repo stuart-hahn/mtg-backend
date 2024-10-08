@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// middleware
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("This will be an awesome MTG app.");
 });
